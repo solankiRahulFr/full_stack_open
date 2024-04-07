@@ -29,4 +29,4 @@ sequenceDiagram
     server-->>browser: STATUS CODE 200 - JSON Response - [{ "content": "please", "date": "2024-04-05T00:42:09.291Z" }, ... ]
     deactivate server
 
-    Note left of browser: The browser renders the notes by <br/> executes the callback function that 
+    Note left of browser: The browser renders the notes
