@@ -7,7 +7,7 @@ const Header = (props) => {
 // Part Component for displaying parts of the course and exercise
 const Parts = ({ name, exercises }) => {
   return (
-    <p>{name} {exercises}</p>
+    <p>Part : {name} and exercises : {exercises}</p>
   )
 }
 
