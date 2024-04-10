@@ -62,8 +62,8 @@ const App = () => {
   }
 
   
-  const max = Math.max(...vote)
-  const index = vote.indexOf(max)
+  const maxVote = Math.max(...vote)
+  const indexAnecdote = vote.indexOf(maxVote)
 
   return (
     <div>
@@ -72,7 +72,7 @@ const App = () => {
       <Button handleClick={nextClick} text='next anecdote'/>
       <Button handleClick={voteClick} text='vote'/>
       <Title text='Anecdote with most votes'/>
-      <MostVotes anecdotes={anecdotes[index]} max={max} />
+      <MostVotes anecdotes={anecdotes[indexAnecdote]} max={maxVote} />
     </div>
   )
 }
