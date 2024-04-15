@@ -1,5 +1,5 @@
-import axios from 'axios';
-const BASE_URL = 'http://localhost:3001/persons';
+import axios from 'redaxios';
+const BASE_URL = '/api/persons';
 
 const getAllPerson = () =>{
     const req = axios.get(BASE_URL);
