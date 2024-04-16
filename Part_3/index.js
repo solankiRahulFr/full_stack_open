@@ -5,13 +5,13 @@ const morgan = require('morgan')
 const cors = require('cors')
 require('dotenv').config()
 // This will help us connect to the database
-const Person = require('./models/person')
+const Person = require('./Person.js')
 
 app.use(cors())
 morgan.token('body', (request) => JSON.stringify(request.body))
 app.use(express.json())
 app.use(morgan('tiny'))
-app.use(express.static('build'))
+app.use(express.static('dist'))
 
 
 app.get('/api/persons',(request, response, next) => {
@@ -119,5 +119,6 @@ const errorHandler = (error, request, response, next) => {
 app.use(errorHandler)
 
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () =>console.log(`Server running on http://localhost:${PORT}`));
+
