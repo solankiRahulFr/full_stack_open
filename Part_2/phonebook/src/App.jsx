@@ -73,7 +73,7 @@ const App = () => {
               setMessage(null)
             }, 3000)
           }).catch(err => {
-            setMessage(`Person with name ${personDetails.name} does not exist or is already removed`)
+            setMessage(err.data.error)
             setPattern('error')
             setTimeout(() => {
               setMessage(null)
@@ -94,7 +94,8 @@ const App = () => {
           setNewName('')
           setNewNumber('')
         }).catch(error => {
-          setMessage(`Error : Unable to create a new person. ${error}`)
+          console.log(error.data.error)
+          setMessage(`Error : Unable to create a new person. ${error.data.error}`)
           setPattern('error')
           setTimeout(() => {
             setMessage(null)
@@ -119,8 +120,8 @@ const App = () => {
           }, 3000)
           setPersons(persons.filter(persons => persons.id !== id))
         }).catch((err) => {
-          setMessage(`Unable to delete the person or person doesn't exist or already removed. ${err}`)
-          setPattern('success')
+          setMessage(`Unable to delete the person or person doesn't exist or already removed. ${err.data.error}`)
+          setPattern('error')
           setTimeout(() => {
             setMessage(null)
           }, 3000)
